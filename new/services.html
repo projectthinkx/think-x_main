@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px; 
+        }
+        .service-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .nav-item{
+            display: flex;
+            gap: 20px;
+            margin-right:30px
+        }
+        .nav-item a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+         .nav-item a:hover{
+             color: #18bc9c;
+            background: rgba(255,255,255,0.08);
+        }
+        .nav-item :nth-child(2){
+            color: #18bc9c;
+            background-color:  rgba(255,255,255,0.08);
+        }
+        .service-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0; 
+            }
+            .navbar {
+                position: static !important; 
+            }
+        }
+        @media (min-width: 769px) {
+            .container {
+                max-width: 720px; 
+            }
+        }
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px; 
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+            max-width: 1140px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="service-item">
+            <img src="image/webdev" alt="Web Development" style="width:50px;height:50px;">
+            <h2>Web Development</h2>
+            <p>We offer comprehensive web development services to create stunning and functional websites tailored to your needs. Our expertise includes front-end and back-end development, e-commerce solutions, content management systems (CMS), and responsive design. We use the latest technologies to ensure your website is fast, secure, and user-friendly.</p>
+        </div>
+        <div class="service-item">
+            <img src="image/appdev.png" alt="Mobile App Development" style="width:50px;height:50px;">
+            <h2>Mobile App Development</h2>
+            <p>We build native and cross-platform mobile applications for iOS and Android, ensuring a seamless user experience. Our mobile app development services cover the entire app lifecycle, from concept and design to development, testing, and deployment. We focus on creating innovative and engaging mobile experiences that meet your business objectives.</p>
+        </div>
+        <div class="service-item">
+            <img src="image/ui-ux.png" alt="UI/UX Design" style="width:50px;height:50px;">
+            <h2>UI/UX Design</h2>
+            <p>Our UI/UX designers create intuitive and visually appealing interfaces that enhance user engagement and satisfaction. We conduct user research, create wireframes and prototypes, and perform usability testing to ensure your digital products are user-centered and effective. Our goal is to design experiences that delight your users and drive business results.</p>
+        </div>
+        <div class="service-item">
+            <img src="image/aiauto.jpg" alt="AI Automation" style="width:50px;height:50px;">
+            <h2>AI Automation</h2>
+            <p>We implement AI-powered solutions to automate tasks, improve efficiency, and drive innovation for your business. Our AI automation services include machine learning, natural language processing, and robotic process automation. We help you identify opportunities to automate repetitive tasks, improve decision-making, and create new AI-driven products and services.</p>
+        </div>
+        <div class="service-item">
+            <img src="image/digital.jpg" alt="Digital Marketing" style="width:50px;height:50px;">
+            <h2>Digital Marketing</h2>
+            <p>We provide digital marketing strategies to boost your online presence, attract customers, and increase conversions. Our digital marketing services include search engine optimization (SEO), pay-per-click (PPC) advertising, social media marketing, email marketing, and content marketing. We develop data-driven strategies to help you reach your target audience and achieve your marketing goals.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
