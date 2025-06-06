@@ -88,7 +88,7 @@
       margin-bottom: 20px;
       font-size: 2rem;
     }
-    .grid-list,.serv {
+    .grid-list ,.serv{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 18px;
@@ -230,18 +230,19 @@
         grid-template-columns:repeat(3,1fr);
         gap: 10px;
       }
+      .serv{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
       .grid-list li {
         padding: 12px 4px;
         font-size: 0.95em;
       }
-      .serv {
-        grid-template-columns:repeat(2,1fr);
-        gap: 10px;
-      }
-      .serv li {
+      .serv li{
         padding: 12px 4px;
         font-size: 0.95em;
       }
+        
       footer {
         font-size: 0.9rem;
         padding: 12px;
@@ -298,7 +299,7 @@ Contact us at think.as.x@gmail.com or visit think-x.in to learn more.
   </section>
   <section id="services">
   <h2>Our Services</h2>
-  <ul class="grid-list">
+  <ul class="grid-list serv">
     
     <li>
       <strong>Custom Software Development</strong>
