@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkX Services</title>
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #e3f2fd;
+            --accent: #42a5f5;
+            --text: #0d223a;
+            --white: #fff;
+            --card-odd: #e3f2fd;
+            --card-even: #bbdefb;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--primary-light);
+            padding-top: 60px;
+            padding-bottom: 40px;
+            color:#333;
+        }
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color:white;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transition: max-height 0.3s;
+            margin-right: 30px;
+        }
+        .navbar li {
+            margin: 0 18px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #18bc9c;
+            background: rgba(24, 188, 156, 0.2);                
+        }
+        .navbar .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+            margin-right:30px ;
+        }
+        .navbar .menu-toggle span {
+            height: 4px;
+            width: 24px;
+            background: white;
+            margin: 3px 0;
+            border-radius: 2px;
+            display: block;
+            transition: 0.3s;
+        }
+        /* Responsive Navbar */
+        @media (max-width: 700px) {
+            .navbar ul {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: #2c3e50;
+                flex-direction: column;
+                align-items: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+                box-shadow: 0 4px 12px rgba(21,101,192,0.12);
+            }
+            .navbar ul.open {
+                max-height: 220px;
+                border-bottom: 1px solid var(--accent);
+                padding-bottom: 10px;
+            }
+            .navbar li {
+                margin: 18px 0;
+            }
+            .navbar .menu-toggle {
+                display: flex;
+            }
+        }
+        /* Services Section */
+        .services-container {
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            padding: 24px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(21,101,192,0.07);
+        }
+        .services-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+        }
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .service-card {
+            background: var(--card-odd);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(21,101,192,0.06);
+            padding: 28px 22px;
+            width: 260px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1.5px solid var(--accent);
+        }
+        .services-list .service-card:nth-child(even) {
+            background: var(--card-even);
+        }
+        .service-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(21,101,192,0.13);
+            border-color: var(--primary);
+        }
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        .service-card p {
+            color: var(--text);
+            font-size: 1rem;
+        }
+        @media (max-width: 900px) {
+            .services-list {
+                gap: 18px;
+                
+            }
+            .service-card {
+                width: 90vw;
+                max-width: 340px;
+            }
+        }
+        @media(max-width: 768px){
+            .services-list{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        /* Footer Marquee */
+        .footer-marquee {
+           background-color: #2c3e50;
+            color: white;
+            padding-top:5px;
+            padding-bottom:5px;
+            padding: 20px;
+            text-align: center;
+            font-size: 1rem;
+            position:fixed;
+            bottom:0;
+            right:0;
+            left:0;
+        }
+        .footer-marquee marquee {
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Think-X</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="services-container">
+        <div class="services-title">Our Services</div>
+        <div class="services-list">
+            <div class="service-card">
+                <h3>AI Automation</h3>
+                <p>Streamline your business with intelligent automation solutions powered by AI.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites tailored to your brand and business needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Marketing</h3>
+                <p>Grow your online presence with SEO, social media, and targeted campaigns.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mobile App Development</h3>
+                <p>Custom mobile apps for Android and iOS to engage your customers anywhere.</p>
+            </div>
+            <div class="service-card">
+                <h3>UI/UX Development</h3>
+                <p>Beautiful, user-friendly interfaces that delight and retain users.</p>
+            </div>
+            <div class="service-card">
+                <h3>PC Setup & Customization</h3>
+                <p>Personalized PC builds and setups for gaming, work, or creative needs.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            Think-X IT Solutions - Innovate | Build | Scale &nbsp; | &nbsp; © 2025 Think-X IT Solutions. All Rights Reserved. &nbsp; | &nbsp; This website is developed by Dineshbabu & Team THINK-X
+        </marquee>
+    </div>
+
+    <script>
+        // Responsive Navbar Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        // Close menu on link click (mobile)
+        Array.from(navLinks.getElementsByTagName('a')).forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 700) {
+                    navLinks.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
