@@ -88,14 +88,14 @@
       margin-bottom: 20px;
       font-size: 2rem;
     }
-    .grid-list {
+    .grid-list,.serv {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 18px;
       margin-bottom: 30px;
       padding: 0;
     }
-    .grid-list li {
+    .grid-list li ,.serv li{
       background: #fff;
       border: 2px solid #18bc9c;
       border-radius: 10px;
@@ -231,6 +231,14 @@
         gap: 10px;
       }
       .grid-list li {
+        padding: 12px 4px;
+        font-size: 0.95em;
+      }
+      .serv {
+        grid-template-columns:repeat(2,1fr);
+        gap: 10px;
+      }
+      .serv li {
         padding: 12px 4px;
         font-size: 0.95em;
       }
